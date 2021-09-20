@@ -19,10 +19,13 @@ setInterval(function(){
 
     }
     var blockLeft = 
-    parseInt(window.getComputedStyle(block).getPropertyValue('top'));
-
+    parseInt(window.getComputedStyle(block).getPropertyValue('left'));
+    var holeTop = 
+    parseInt(window.getComputedStyle(hole).getPropertyValue('top'));
+    var cTop = -(500-characterTop);
     //detection for if the bird hits the pipe
-    if(characterTop){
+    if((characterTop > 480) || ((blockLeft < 20) && (blockLeft>-50)&&((cTop<holeTop) ||
+    (cTop>holeTop + 130)))) {
         alert('GAME OVER! score: '+score);
         character.style.top = 100 + 'px';
         score= 0;
