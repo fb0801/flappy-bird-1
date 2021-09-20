@@ -37,7 +37,8 @@
     width: 20px;
     height: 20px;
     background-color: yellow;
-    position: relative;
+    position: absolute;
+    top: 100px;
     border-radius: 50%;    
 }
 
