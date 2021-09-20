@@ -21,7 +21,15 @@ setInterval(function(){
 
 function jump(){
     jumping = 1;
+    let jumpCount = 0;
     var jumpInterval = setInterval(function(){
-
+        var characterTop = 
+        parseInt(window.getComputedStyle(character).getPropertyValue('top'));
+        character.style.top = (characterTop + 3) + 'px';
+        if (jumpCount > 20){
+            clearInterval(jumpInterval)
+            jumping =0;
+        }
+        jumpCount++;
     },10 );
 }
