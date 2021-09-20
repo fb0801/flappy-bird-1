@@ -8,6 +8,7 @@
     height: 500px;
     border: 1px solid black;
     margin: auto;
+    overflow: hidden;
 }
 
 #block{
@@ -25,7 +26,11 @@
     height: 150px;
     background-color: white;
     position: relative;
-    
+    left: 400px;
+    top: -500px;
+    animation: block 2s infinite linear; /*to use the keyframe*/
+
+
 }
 
 @keyframes block {
