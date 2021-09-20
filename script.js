@@ -26,7 +26,7 @@ setInterval(function(){
     //detection for if the bird hits the pipe
     if((characterTop > 480) || ((blockLeft < 20) && (blockLeft>-50)&&((cTop<holeTop) ||
     (cTop>holeTop + 130)))) {
-        alert('GAME OVER! score: '+score);
+        alert('GAME OVER! score: '+(score-1));
         character.style.top = 100 + 'px';
         score= 0;
     }
@@ -38,12 +38,13 @@ function jump(){
     var jumpInterval = setInterval(function(){
         var characterTop = 
         parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-        if((characterTop > 6) && (counter < 15)){
+        if((characterTop > 6) && (jumpCount < 15)){
         character.style.top = (characterTop - 5) + 'px';
         }
         if (jumpCount > 20){
             clearInterval(jumpInterval)
             jumping =0;
+            jumpCount=0;
         }
         jumpCount++;
     },10 );
